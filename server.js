@@ -8,5 +8,5 @@ connect();
 
 const PORT = process.env.PORT || 3001; // Render pe process.env.PORT use kare
 app.listen(PORT, () => {
-    console.log(`listening on port ${PORT} http://localhost:${PORT}`);
+    console.log(`listening on port ${PORT} `);
 });
