@@ -10,7 +10,7 @@ async function createproduct(req,res) {
     try {
      
      
-        const {title, description, priceAmount,priceCurrency }=req.body
+        const {title, description, priceAmount,priceCurrency , stock }=req.body
         const seller=req.user?.id
          const price = {
             amount: Number(priceAmount),
@@ -24,7 +24,7 @@ async function createproduct(req,res) {
         console.log("images",images);
         
 
-        const product = await productModel.create({ title, description, price, seller, images });
+        const product = await productModel.create({ title, description, price, seller, images,stock });
         
 
         await publishToQueue("Notification-service-Product-created",{

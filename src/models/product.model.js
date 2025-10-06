@@ -24,7 +24,8 @@ const productSchema = new mongoose.Schema({
     id: String
   }],
   stock:{type:Number,default:0,required:true}
-});
+},
+{ timestamps: true });
 
 
 productSchema.index({title:'text',description:'text'})
